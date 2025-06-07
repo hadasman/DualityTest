@@ -1,0 +1,16 @@
+{
+  "countries": {
+    "1": "US",
+    "2": "FR",
+    "3": "DE",
+    "4": "IN",
+    "5": "GB"
+  },
+  "column_names": {
+    "txn_id": "transaction_id",
+    "cust_id": "customer_id",
+    "city_name": "city",
+    "country_code": "country",
+    "Tx_time": "time_of_transaction"
+  }
+}
