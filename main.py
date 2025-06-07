@@ -20,6 +20,17 @@ ASSUMPTIONS:
 - Supported operators are `last_time_period` and `eq` but it would be easy to add more
 - The country in the query is by the source (numbers), but this can be changed.
 - Even if the time column is not selected still add it to the df for partitioning
+
+
+4. Performance Strategy
+Briefly describe how you would scale this pipeline for large data:
+
+
+What happens if there's no index on the source table?
+
+
+How do you enable parallelism?
+
 """
 
 if __name__ == '__main__':
@@ -34,6 +45,6 @@ if __name__ == '__main__':
     ingested_df = ingest(spark, TRANSACTIONS_FILENAME, duality_query, country_code_mapping)
     transformed_df = transform(ingested_df, duality_schema, country_code_mapping['column_names'],
                                country_code_mapping['countries'], 'country', duality_query)
-    save_output(transformed_df, 'output', PARTITION_COLUMN)
+    save_output(transformed_df, 'output', PARTITION_COLUMN) #TODO: make parquet
 
     spark.stop()

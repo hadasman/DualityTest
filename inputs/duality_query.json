@@ -17,7 +17,7 @@
     {
       "field_name": "country",
       "operator": "eq",
-      "value": null
+      "value": "1"
     }
   ]
 }
