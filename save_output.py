@@ -4,7 +4,6 @@ from pyspark.sql.functions import col, year, month, dayofmonth
 
 def save_output(df: DataFrame, output_path: str, partition_column: str = None, save_mode: str = "overwrite"):
     """partition"""
-    # TODO: use id
     if partition_column:
         _save_by_datetime_partition(df, partition_column, output_path, save_mode)
     else:
